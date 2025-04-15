@@ -1,68 +1,87 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+*{
+  box-sizing: border-box;
   margin: 0;
+}
+
+.pagewrap{
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
   min-height: 100vh;
+  width: 100vw;
+
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* HEADER */
+.header{
+  display: flex;
+  position: sticky;
+  flex-flow: nowrap row;
+
+  justify-content: space-between;
+  align-items: center;
+  
+  top: 0;
+  height: 10vh;
+  width: 100vw;
+  z-index: 1000;
+  margin-top: 0;
+  padding: 10px;
+
+  background-color: lightblue;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.logo, .menu-bar, .search-bar{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  border: 2px dotted red;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.logo{
+  margin-right: 10%;
+}
+
+.menu-bar{
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.search-bar{
+  margin-left: 15%;
+}
+
+/* BODY */
+
+.list-display{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+  width: 100vw;
+
+  background-color: #f4f4f4;
+}
+
+.list-body{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.list-title{
+  width: 100%;
+  padding-left: 10%;
+}
+
+.list-sidebar{
+  width: 20%;
+}
+
+.list-item-title{
+  border: 1px dotted red;
+}
+
+.list-items{
+  width: 60%;
 }
