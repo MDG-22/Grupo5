@@ -1,84 +1,82 @@
 import React from 'react'
 import { Card, CardHeader, ListGroup, ListGroupItem, Row, Col } from 'react-bootstrap'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import BookItem from '../bookItem/BookItem'
 
-const BookList = () => {
+const BookList = ({books}) => {
   return (
-    <>
-      <div className="list-display">
-
+    <div className="list-page">
       <Card className='my-list'>
         <CardHeader className='list-title'>
           My Books
         </CardHeader>
+
         <div className="list-body">
-
-        <Card className='list-sidebar'>
-          <ListGroup variant='flush' >
-            <ListGroupItem>
-              All
-            </ListGroupItem>
-            <ListGroupItem>
-            Read
-            </ListGroupItem>
-            <ListGroupItem>
-            Reading
-            </ListGroupItem>
-            <ListGroupItem>
-            Want to Read
-            </ListGroupItem>
-          </ListGroup>
-        </Card>
-
-        <Card className='list-items'>
-          <CardHeader>
-            <Row>
-              <Col xs={1} className='list-item-title' >
-                Cover
-              </Col>
-              <Col xs={3} className='list-item-title' >
-                Title
-              </Col>
-              <Col xs={3} className='list-item-title' >
-                Author
-              </Col>
-              <Col xs={2} className='list-item-title' >
-                Rating
-              </Col>
-              <Col xs={3} className='list-item-title' >
-                Status
-              </Col>
-            </Row>
-            </CardHeader>
-            <ListGroup>
+          <Card className='list-sidebar'>
+            <ListGroup variant='flush' >
               <ListGroupItem>
-                La fila de arriba es titulo. De acá para abajo, todo esto tendría que ir mapeado xd
+                All
               </ListGroupItem>
               <ListGroupItem>
-                <Row>
-                  <Col xs={1} className='list-item-title' >
-                    x.jpg
-                  </Col>
-                  <Col xs={3} className='list-item-title' >
-                    item title
-                  </Col>
-                  <Col xs={3} className='list-item-title' >
-                    item author
-                  </Col>
-                  <Col xs={2} className='list-item-title' >
-                    item rating
-                  </Col>
-                  <Col xs={3} className='list-item-title' >
-                    item status
-                  </Col>
-                </Row>
+              Read
+              </ListGroupItem>
+              <ListGroupItem>
+              Reading
+              </ListGroupItem>
+              <ListGroupItem>
+              Want to Read
               </ListGroupItem>
             </ListGroup>
-        </Card>
+          </Card>
+
+          <Card className='list-items'>
+            <CardHeader>
+              <Row>
+                <Col xs={1} className='list-item-header' >
+                  Cover
+                </Col>
+                <Col xs={4} className='list-item-header' >
+                  Title
+                </Col>
+                <Col xs={3} className='list-item-header' >
+                  Author
+                </Col>
+                <Col xs={1} className='list-item-header' >
+                  Status
+                </Col>
+                <Col xs={1} className='list-item-header' >
+                  Rating
+                </Col>
+                <Col xs={1} className='list-item-header' >
+                  Páginas
+                </Col>
+                <Col xs={1} className='list-item-header' >
+                  #
+                </Col>
+              </Row>
+              </CardHeader>
+
+              <ListGroup>
+                {
+                  books.map(book => (
+                    <BookItem 
+                      key={book.id}
+                      id={book.id}
+                      author={book.author}
+                      title={book.title}
+                      rating={book.rating}
+                      summary={book.summary}
+                      pages={book.pages}
+                      cover={book.imageUrl}
+                    />
+                  ))
+                }
+              </ListGroup>
+          </Card>
         </div>
 
       </Card>
-      </div>
-    </>
+    </div>
   )
 }
 
