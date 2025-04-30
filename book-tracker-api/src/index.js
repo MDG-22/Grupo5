@@ -3,16 +3,19 @@ import express from 'express';
 import { PORT } from './config.js';
 import { sequelize } from './db.js';
 
+// Modelos User, Book, Author, Lecture
 import "./models/index.js";
 
-import router from './routes/book.routes.js';
+import bookRoutes from './routes/book.routes.js';
+import authRoutes from './services/user.services.js'
 
 const app = express();
 
 try{
     app.use(express.json())
     app.listen(PORT);
-    app.use(router);
+    app.use(bookRoutes);
+    app.use(authRoutes);
 
     await sequelize.sync();
 

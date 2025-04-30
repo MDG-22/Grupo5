@@ -9,14 +9,30 @@ export const User = sequelize.define("user",{
     },
     username:{
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     email:{
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true,
     },
-    totalRead:{
-        // AVERIGUAR ESTO Y LOS TIMESTAMPS
-        // AVERIGUAR DATOS PARA TOTAL LEIDO Y PAGINAS
-    }
+    password:{
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    totalBooksRead:{
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    totalPagesRead:{
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+
+    // BOOK CHAMPIONS => RAMA PROFE TIENE EJEMPLO DE ENUMS
+    // role:{
+    //     type: DataTypes.ENUM(Object.values(UserRoles)),
+    //     allowNull: false,
+    //     defaultValue: UserRoles.USER,
+    // }
 })
