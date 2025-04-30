@@ -33,6 +33,6 @@ export const User = sequelize.define("user",{
     // role:{
     //     type: DataTypes.ENUM(Object.values(UserRoles)),
     //     allowNull: false,
-    //     defaultValue: UserRoles.USER,
+    //     defaultValue: UserRoles.USER, .USER sería el rol
     // }
 })

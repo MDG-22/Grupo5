@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import BookItem from '../bookItem/BookItem'
 
 const BookList = ({books}) => {
+
+  // ACA DEBERIA LLAMAR LOS METODOS PUT, DELETE PARA EDITAR Y BORRAR LIBROS DE LISTAS
   return (
     <div className="list-page">
       <Card className='my-list'>
