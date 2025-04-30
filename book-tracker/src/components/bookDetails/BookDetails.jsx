@@ -8,10 +8,6 @@ const BookDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // NO ESTOY SEGURO DE QUE HACE ESTO
-  // if (!location.state || !location.state.book) {
-  //   return <p style={{ padding: '2rem' }}>No se encontró el libro.</p>;
-  // }
 
   const {title, author, cover, rating, summary, pages} = location.state.book;
 
@@ -49,3 +45,23 @@ const BookDetails = () => {
 }
 
 export default BookDetails
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // NO ESTOY SEGURO DE QUE HACE ESTO
+  // if (!location.state || !location.state.book) {
+  //   return <p style={{ padding: '2rem' }}>No se encontró el libro.</p>;
+  // }

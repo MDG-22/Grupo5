@@ -10,10 +10,11 @@
   width: 100%;
 }
 
-.layout{
+.main-layout{
   display: flex;
   flex: 1;
   width: 100%;
+  box-shadow: 0 0 20px #000;
 }
 
 /* HEADER */
@@ -323,4 +324,17 @@
 
 .book-pages{
   font-size: 0.9rem;
+}
+
+/* NEW BOOK / NUEVO LIBRO */
+.new-book-page{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.new-book-form{
+  border: 2px #555555 solid;
+  border-radius: 2em;
+  padding: 2%;
 }

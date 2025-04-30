@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import SearchBar from '../searchBar/searchBar';
 import UserMenu from '../userMenu/UserMenu';
+import SearchBar from '../searchBar/SearchBar';
 
-const Header = ({isLogged, setIsLogged, userName, books}) => {
+const NavBar = ({isLogged, setIsLogged, userName, books}) => {
 
   const navigate = useNavigate();
 
   return (
     <div className='header-container'>
-      <div className="logo">
+      <div className="logo" onClick={() => navigate('/')} >
           <span>img</span>
           <span className='site-name' >Book Tracker</span>
       </div>
@@ -30,4 +30,4 @@ const Header = ({isLogged, setIsLogged, userName, books}) => {
   )
 }
 
-export default Header
+export default NavBar
