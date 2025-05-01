@@ -1,33 +1,52 @@
-import React from 'react'
+ import React from 'react';
+import { Navbar, Container, Nav, Form, FormControl } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import UserMenu from '../userMenu/UserMenu';
 import SearchBar from '../searchBar/SearchBar';
 
 const NavBar = ({isLogged, setIsLogged, userName, books}) => {
-
-  const navigate = useNavigate();
-
   return (
-    <div className='header-container'>
-      <div className="logo" onClick={() => navigate('/')} >
-          <span>img</span>
-          <span className='site-name' >Book Tracker</span>
-      </div>
+    
+    <Navbar bg="light" variant="light" expand="lg" className="mb-3"> 
+      <Container fluid> 
 
-      <div className="menu-bar">
-          <span className="menu" onClick={() => navigate('/')}>Inicio</span>
-          <span className="menu" onClick={() => navigate('my-books')} >Mis Libros</span>
-          <span className="menu" onClick={() => navigate('browse')} >Browse</span>
-          <SearchBar books={books} />
-      </div>
+        
+        <Navbar.Brand href="#home">
+          
+          <span style={{ marginRight: '8px' }}> 
+           
+            img
+          </span>
+          Book Tracker
+        </Navbar.Brand>
 
-      <UserMenu 
+        
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+
+          
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#my-books">My Books</Nav.Link>
+            <Nav.Link href="#browse">Browse</Nav.Link>
+          </Nav>
+
+          
+          <Form className="d-flex">
+            <SearchBar books={books} />
+
+      
+          </Form>
+
+          <UserMenu 
       isLogged={isLogged}
       setIsLogged={setIsLogged}
       username={userName}
       />
-    </div>
-  )
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
-export default NavBar
+export default NavBar;

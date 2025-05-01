@@ -10,6 +10,7 @@ import Protected from './components/protected/Protected'
 import Login from './components/login/Login'
 import Home from './components/home/Home'
 import NewBook from './components/newBook/NewBook'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 

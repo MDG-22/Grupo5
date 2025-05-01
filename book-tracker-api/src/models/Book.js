@@ -1,38 +1,30 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../db.js";
-import { Author } from "./Author.js";
 
 export const Book = sequelize.define("book", {
-    id:{
+    id: {
         type: DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
-        autoIncrement: true
     },
-    title:{
+    title: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
-    authorId:{
+    authorId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        references:{
-            model: Author,
-            key: "id"
-        }
     },
-    pages:{
-        type: DataTypes.INTEGER
+    pages: {
+        type: DataTypes.INTEGER,
     },
-    genres:{
-        type: DataTypes.STRING
+    genre: {
+        type: DataTypes.STRING,
     },
-    summary:{
-        type: DataTypes.STRING
+    summary: {
+        type: DataTypes.STRING,
     },
-    imageUrl:{
-        type: DataTypes.STRING
-    }
-},  {
-        timestamps: false
-    }
-);
+    imageUrl: DataTypes.STRING,
+}, {
+    timestamps: false,
+})

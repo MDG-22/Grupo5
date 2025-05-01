@@ -77,10 +77,20 @@ const NewBook = () => {
                 <Col>
                     <FormGroup>
                         <FormLabel>Autor</FormLabel>
-                        <FormControl type='text' 
+                        <FormControl as="select" 
                         onChange={handleChangeAuthorId}
                         value={authorId}
-                        ></FormControl>
+                        >
+                            <option value="">
+                                Seleccione un autor
+                            </option>
+
+                            {/* {authors.map((author) => (
+                                <option>
+                                    {author.name}
+                                </option>
+                            ))} */}
+                        </FormControl>
                     </FormGroup>
                 </Col>
 
